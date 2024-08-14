@@ -1,4 +1,4 @@
-#include <iostream.h>
+#include <iostream>
 using namespace std;
 
 int binsrch(int p[], int low, int high, int obj)
