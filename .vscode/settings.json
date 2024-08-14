@@ -4,6 +4,7 @@
         "*.ejs": "html",
         "iostream": "cpp",
         "vector": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "ostream": "cpp"
     }
 }
