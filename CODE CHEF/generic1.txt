@@ -1,0 +1,160 @@
+public class Customer {
+    //instance variables
+    public String customerId;
+    public String customerName;
+    public long contactNumber;
+    public String address;
+    
+    public Customer(String customerId,String customerName,long contactNumber,String address) {
+        this.customerId=customerId;
+        this.customerName=customerName;
+        this.contactNumber=contactNumber;
+        this.address=address;    
+    }
+    //parameterless constructor
+    public Customer() {
+        customerId="C000";
+    }
+    
+    public Customer(String cId,String cName,long cNo) {
+        customerId=cId;
+        customerName=cName;
+        contactNumber=cNo;
+        address="Not provided";
+    }
+from Susan Koshy (internal) to everyone:    11:31 AM
+public Customer(String cName,long cNo) {
+        //calling constructor with one String argument
+        this("1234, Grand Road");
+        //calling parameterless constructor
+        //this();
+        customerName=cName;
+        contactNumber=cNo;
+        
+    }
+    public Customer(String address) {
+        this.address=address;
+    }
+from Susan Koshy (internal) to everyone:    11:32 AM
+public void displayCustomerDetails() {
+        
+        System.out.println("Customer details: ");
+        System.out.println("Customer Id: "+customerId);
+        System.out.println("Customer name: "+customerName);
+        System.out.println("Contact number: "+contactNumber);
+        System.out.println("Address: "+address);
+    }
+    public static void main(String[] args) {
+        Customer cust5= new Customer("Mathew",9778442310l);
+        cust5.displayCustomerDetails();
+        //create object of Customer class
+//        Customer cust1=new Customer("C101","John",9876543210L,"12, Broadway");            
+//        cust1.displayCustomerDetails();
+//        
+//        
+//        Customer cust2=new Customer("C301","James",9812345610L,"32, Park Street");        
+//        cust2.displayCustomerDetails();
+        
+                
+//        Customer cust3=new Customer();
+//        cust3.displayCustomerDetails();
+//        
+//        Customer cust4=new Customer("C501","Simon",7865432109l);
+//        cust4.displayCustomerDetails();
+    }
+
+
+
+
+
+-----------------------------------------------
+public int findSum(int n) {
+        int sum = 0;
+        for (int i = 1; i < n; i++) {
+            sum = sum + i;
+        }
+        display();    
+        return sum;
+    }
+    public void display() {
+        System.out.println("Hello");
+    }
+    public static void main(String args[]) {
+        Tester t=new Tester();
+        System.out.println(t.findSum(5));
+    }
+
+--------------------------------------------------
+what is a Constructor
+This is the most simplest of method.
+and it does not any return value..
+why we use ?
+To intialize variables 
+Is there any rules?
+yes. the constructor must be same as calss name.
+Classes can have only one parameterless constructor
+
+-----------------------------------------------------------------------
+class Customer {
+    private int custID;
+    private String name;
+    private long phNum;
+    private Address address;
+    
+    public int getCustID() {
+        return custID;
+    }
+    public void setCustID(int custID) {
+        this.custID = custID;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public long getPhNum() {
+        return phNum;
+    }
+    public void setPhNum(long phNum) {
+        this.phNum = phNum;
+    }
+    public Address getAddress() {
+        return address;
+    }
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+}
+--------------------------------------------------------------------
+package day1;
+public class Address {
+    private String city;
+    private String state;
+    private String country;
+    private int pincode;
+    public String getCity() {
+        return city;
+    }
+    public void setCity(String city) {
+        this.city = city;
+    }
+    public String getState() {
+        return state;
+    }
+    public void setState(String state) {
+        this.state = state;
+    }
+    public String getCountry() {
+        return country;
+    }
+    public void setCountry(String country) {
+        this.country = country;
+    }
+    public int getPincode() {
+        return pincode;
+    }
+    public void setPincode(int pincode) {
+        this.pincode = pincode;
+    }
+}

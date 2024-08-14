@@ -1,0 +1,271 @@
+public class Demo3 {
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        B obj=new B();
+        obj.display();
+        obj.sub();
+        obj.a=10;
+        obj.setB(20);
+    }
+}
+
+from Pooja L (internal) to everyone:    3:25 PM
+class A{
+    public int a=40;
+    private int b=30;
+    
+    public int getA() {
+        return a;
+    }
+    public void setA(int a) {
+        this.a = a;
+    }
+    
+    public int getB() {
+        return b;
+    }
+    public void setB(int b) {
+        this.b = b;
+    }
+    public A() {
+    System.out.println("Inside A");
+    }
+    
+    public A(int a, int b) {
+        System.out.println(a+b);
+        }
+    
+    public int sub() {
+        return    a-b;
+    }
+    
+}
+from Pooja L (internal) to everyone:    3:25 PM
+class B extends A{
+    int c;
+    
+    public B() {
+        System.out.println("inside B constructor");
+    }
+    public B(int c) {
+        this();
+    //    super(20,30);
+        this.c=c;
+        System.out.println("Inside B");
+    }
+    public void display() {
+        
+        System.out.println("Subtrated value is "+super.sub());
+    }
+    
+    
+}
+----------------------------------------------------------------------------
+package day2;
+
+
+	class CabServiceProvider{
+	    //Implement your code here
+	    private String cabServiceName;
+	    private int totalCabs;
+	    
+	    
+
+		public CabServiceProvider(String cabServiceName, int totalCabs)
+	    {
+	        this.cabServiceName=cabServiceName;
+	        this.totalCabs=totalCabs;
+	    }
+	    
+	    public double calculateRewardPrice(Driver driver)
+	    {
+	    	
+	    	if(cabServiceName=="Halo") {
+	    	        if(driver.getAverageRating<4) {
+	    	            return 0;
+	    	    }
+	    	        else if(driver.getAverageRating>=4 && driver.getAverageRating<4.5){
+	    	            return driver.getAverageRating*5;
+	    	        }
+	    	        else if(driver.getAverageRating>=4.5 && driver.getAverageRating<5){
+	    	            return driver.getAverageRating*10;
+	    	            }}
+	    	    
+	    	    else if(cabServiceName=="Aber") {
+	    	        if(driver.getAverageRating<4) {
+	    	            return 0;
+	    	    }
+	    	        elseif(driver.getAverageRating>=4 && driver.getAverageRating<4.5);{
+	    	            return driver.getAverageRating*3;
+	    	        }
+	    	        elseif(driver.getAverageRating>=4.5 && driver.getAverageRating<5);{
+	    	            return driver.getAverageRating*8;
+	    	        }
+	    	        }
+	    	    
+			return totalCabs;
+	  
+		}
+		private void elseif(boolean b) {
+			// TODO Auto-generated method stub
+		
+			
+		}
+
+		public String getCabServiceName() {
+			return cabServiceName;
+		}
+		public void setCabServiceName(String cabServiceName) {
+			this.cabServiceName = cabServiceName;
+		}
+		public int getTotalCabs() {
+			return totalCabs;
+		}
+		public void setTotalCabs(int totalCabs) {
+			this.totalCabs = totalCabs;
+		}
+	    
+	}
+
+	class Driver {
+		
+		public int getAverageRating;
+		private String driverName;
+		private float averageRating;
+		
+		public Driver(String driverName, float averageRating){
+			this.driverName=driverName;
+			this.averageRating=averageRating;
+		}
+		
+		public String getDriverName(){
+			return this.driverName;
+		}
+		
+		public void setDriverName(String driverName){
+			this.driverName=driverName;
+		}
+		
+		public float getAverageRating(){
+			return this.averageRating;
+		}
+		
+		public void setAverageRating(float averageRating){
+			this.averageRating=averageRating;
+		}
+
+	    //DO NOT MODIFY THE METHOD
+	    //Your exercise might not be verified if the below method is modified
+	    public String toString(){
+	        return "Driver\ndriverName: "+this.driverName+"\naverageRating: "+this.averageRating;
+	    }
+	}
+
+	public class Tester1 {
+		
+		public static void main(String args[]){
+		    CabServiceProvider cabServiceProvider1 = new CabServiceProvider("Halo", 50);
+
+			Driver driver1 = new Driver("Luke", 4.8f);
+			Driver driver2 = new Driver("Mark", 4.2f);
+			Driver driver3 = new Driver("David", 3.9f);
+			
+			Driver[] driversList = { driver1, driver2, driver3 };
+			for (Driver driver : driversList) {
+				System.out.println("Driver Name: "+driver.getDriverName());
+				double bonus = cabServiceProvider1.calculateRewardPrice(driver);
+				if (bonus>0)
+					System.out.println("Bonus: $"+bonus+"\n");
+				else
+					System.out.println("Sorry, bonus is not available!");
+			}
+			
+			//Create more objects of CabServiceProvider and Driver classes for testing your code
+		}
+	}
+--------------------------------------------------------------------------
+public class ExcepHanDemo {
+    public static void main(String[] args) {
+        Student student1 = new Student();
+        int[] marks = { 96, 65, 76 };
+        student1.setMarks(marks);
+        try {
+            student1.calculateAverageMarks();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getMessage());
+        }
+    }
+}
+from Pooja L (internal) to everyone:    12:28 PM
+class Student {
+    private String name;
+    private int[] marks;
+    private float averageMarks;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int[] getMarks() {
+        return marks;
+    }
+    public void setMarks(int[] marks) {
+        this.marks = marks;
+    }
+    public float getAverageMarks() {
+        return averageMarks;
+    }
+    public void setAverageMarks(float averageMarks) {
+        this.averageMarks = averageMarks;
+    }
+
+from Pooja L (internal) to everyone:    12:28 PM
+public void calculateAverageMarks() throws Exception{
+        
+        try {
+            int sum = 0;
+            int totalSubjects = marks.length;
+            try {
+                for (int i = 0; i <= marks.length; i++) {
+                    sum += marks[i];
+                }
+            } catch (ArithmeticException ae) {
+                // TODO Auto-generated catch block
+                System.out.println(ae.getMessage());
+            }
+            this.averageMarks = sum / totalSubjects;// Calculating averageMarks
+            System.out.println("Average Marks : " + this.averageMarks);
+        
+        
+        }catch(Exception e) { 
+            throw new Exception("Error occured");
+        }finally {
+            System.out.println("Thank you for listening to my class");
+        }
+        
+    }
+}
+//Exception handling
+-----------------------------------------------------------------------------------------------------------------------
+ackage day4;
+class Trainee {
+    protected int tid;
+    protected void accessId() {
+        System.out.println(tid);
+    }
+}
+public class Educator{
+    protected int eid;
+    public String name;    
+    protected void accesseId() {
+        System.out.println(eid);
+    }
+    public static void main(String[] args) {
+        Trainee t=new Trainee();
+        t.tid=10;
+        t.accessId();
+        
+    }
+}//package

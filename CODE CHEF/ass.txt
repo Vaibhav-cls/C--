@@ -1,0 +1,46 @@
+public class Customer {
+    //instance variables
+    public String customerId;
+    public String customerName;
+    public long contactNumber;
+    public String address;
+    
+    //method to calculate totalCost by taking price and discount as arguments
+    public double calculateBillAmount(double price,double discount) {
+        double totalCost=0;
+        totalCost=price-(price*discount/100.0);
+        return totalCost;
+    }
+    
+    //instance method
+    public void displayCustomerDetails() {
+        System.out.println("Customer details: ");
+        System.out.println("Customer Id: "+customerId);
+        System.out.println("Customer name: "+customerName);
+        System.out.println("Contact number: "+contactNumber);
+        System.out.println("Address: "+address);
+    }
+    public static void main(String[] args) {
+        //create object of Customer class
+        Customer cust1=new Customer();
+        //assign values to instance variables
+        cust1.customerId="C101";
+        cust1.customerName="John";
+        cust1.contactNumber=9876543210L;
+        cust1.address="12, Broadway";
+
+
+//invoke method         
+        cust1.displayCustomerDetails();
+        double amt=cust1.calculateBillAmount(100,7.5);
+        System.out.println(amt);
+        
+        Customer cust2=new Customer();
+        cust2.customerId="C301";
+        cust2.customerName="James";
+        cust2.contactNumber=9812345610L;
+        cust2.address="32, Park Street";
+        cust2.displayCustomerDetails();
+        System.out.println(cust2.calculateBillAmount(300, 1.5));
+    }
+    }
